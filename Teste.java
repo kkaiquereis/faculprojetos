@@ -2,14 +2,14 @@ import java.util.Scanner;
 
 public class Teste {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner ler = new Scanner(System.in);
         boolean senhaCorreta = false;
 
         while (!senhaCorreta) {
             System.out.print("Digite a senha: ");
-            int senha = sc.nextInt();
+            int senha = ler.nextInt();
 
-            if (senha == 1414) {
+            if (senha == 1701) {
                 System.out.println("Senha correta.");
                 senhaCorreta = true;
             } else {
@@ -19,21 +19,21 @@ public class Teste {
 
         // Pede um número, salva na variável e depois mostra o valor
         System.out.print("Digite um número: ");
-        int numero = sc.nextInt();
-        sc.nextLine();// limpa a linha do buffer
+        int numero = ler.nextInt();
+        ler.nextLine();// limpa a linha do buffer
         System.out.print("seu nome é?: ");
-        String nome = sc.nextLine();
+        String nome = ler.nextLine();
         System.out.print("digite sua idade: ");
-        int idade = sc.nextInt();
+        int idade = ler.nextInt();
 
             if (idade < 18) {
                 System.out.println("Você não tem idade suficiente para acessar o sistema.");
-                sc.close();
+                ler.close();
                 return;
             }
         
         System.out.println("Suas informaçoes sao: " + "seu nome é " + nome + " tem " + idade + " anos " + "seu numero é " +numero);
-        sc.close();
+        ler.close();
 
 
 
