@@ -15,7 +15,7 @@ public class numeros {
             int resultado = num1 + num2;
             System.out.println("O resultado da adição é: " + resultado);
 
-        } else if (operacao.equals("subtracao")) {
+        } else if (operacao.equals("subtracao")) { // if else é para varias condiçoes 
             System.out.println("Digite o primeiro número: ");
             int nums1 = ler.nextInt();
             System.out.println("Digite o segundo número: ");
