@@ -7,44 +7,51 @@ public class numeros {
         System.out.println("qual tipo de operação: ");
         String operacao = ler.nextLine();
 
-        if (operacao.equals("adicao")) {
-            System.out.println("Digite o primeiro número: ");
-            int num1 = ler.nextInt();
-            System.out.println("Digite o segundo número: ");
-            int num2 = ler.nextInt();
-            int resultado = num1 + num2;
-            System.out.println("O resultado da adição é: " + resultado);
+        
+        switch (operacao) {
+            case "adicao":
+                System.out.println("Digite o primeiro número: ");
+                int num1 = ler.nextInt();
+                System.out.println("Digite o segundo número: ");
+                int num2 = ler.nextInt();
+                int resultado = num1 + num2;
+                System.out.println("O resultado da adição é: " + resultado);
+                break;
 
-        } else if (operacao.equals("subtracao")) { // if else é para varias condiçoes 
-            System.out.println("Digite o primeiro número: ");
-            int nums1 = ler.nextInt();
-            System.out.println("Digite o segundo número: ");
-            int nums2 = ler.nextInt();
-            int resultado = nums1 - nums2;
-            System.out.println("O resultado da subtração é: " + resultado);
+            case "subtracao":
+                System.out.println("Digite o primeiro número: ");
+                int nums1 = ler.nextInt();
+                System.out.println("Digite o segundo número: ");
+                int nums2 = ler.nextInt();
+                resultado = nums1 - nums2;
+                System.out.println("O resultado da subtração é: " + resultado);
+                break;
 
-        } else if (operacao.equals("multiplicacao")) {
-            System.out.println("Digite o primeiro número: ");
-            int numm1 = ler.nextInt();
-            System.out.println("Digite o segundo número: ");
-            int numm2 = ler.nextInt();
-            int resultado = numm1 * numm2;
-            System.out.println("O resultado da multiplicação é: " + resultado);
+            case "multiplicacao":
+                System.out.println("Digite o primeiro número: ");
+                int numm1 = ler.nextInt();
+                System.out.println("Digite o segundo número: ");
+                int numm2 = ler.nextInt();
+                resultado = numm1 * numm2;
+                System.out.println("O resultado da multiplicação é: " + resultado);
+                break;
 
-        } else if (operacao.equals("divisao")) {
-            System.out.println("Digite o primeiro número: ");
-            int numd1 = ler.nextInt();
-            System.out.println("Digite o segundo número: ");
-            int numd2 = ler.nextInt();
-            if (numd2 == 0) {
-                System.out.println("Não é possível dividir por zero.");
-            } else {
-                double resultado = (double) numd1 / numd2;
-                System.out.println("O resultado da divisão é: " + resultado);
-            }
+            case "divisao":
+                System.out.println("Digite o primeiro número: ");
+                int numd1 = ler.nextInt();
+                System.out.println("Digite o segundo número: ");
+                int numd2 = ler.nextInt();
+                if (numd2 == 0) {
+                    System.out.println("Não é possível dividir por zero.");
+                } else {
+                    double resultadoDivisao = (double) numd1 / numd2;
+                    System.out.println("O resultado da divisão é: " + resultadoDivisao);
+                }
+                break;
 
-        } else {
-            System.out.println("Operação inválida.");
+            default:
+                System.out.println("Operação inválida.");
+        }
+
         }
     }
-}
