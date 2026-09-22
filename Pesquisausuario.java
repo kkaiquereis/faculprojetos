@@ -1,6 +1,0 @@
-/**
- * PesquisaUsuario
- */
-public class Pesquisausuario {
-
-}
