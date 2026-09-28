@@ -21,15 +21,16 @@ public class numeros {
                 String opcao = ler.nextLine();
 
                 switch (opcao) {
-                    case "1":// adicionar tarefa
+                    case "1" -> {
+                        // adicionar tarefa
                         System.out.print("Digite uma tarefa: ");
                         String tarefa = ler.nextLine();
                         tarefas.add(tarefa);
                         status.add("Pendente");
                         System.out.println("Tarefa adicionada com sucesso!");
-                        break;
+                    }
 
-                    case "2":
+                    case "2" -> {
                         if (tarefas.isEmpty()) {// nao tem tarefas
                             System.out.println("Não há tarefas pendentes.");
                         } else {
@@ -37,9 +38,9 @@ public class numeros {
                                 System.out.println("- " + tarefas.get(i) + " (" + status.get(i) + ")");
                             }
                         }
-                        break;
+                    }
 
-                    case "3":
+                    case "3" -> {
                         if (tarefas.isEmpty()) {// nao tem tarefas
                             System.out.println("Não há tarefas para modificar.");
                         } else {
@@ -54,31 +55,30 @@ public class numeros {
                                 System.out.println("Índice inválido.");
                             }
                         }
-                        break;
+                    }
 
-                    case "4":
+                    case "4" -> {
                         continuar = false; // <-- isso faz o while parar
                         System.out.println("Encerrando o programa.");
-                        break;
+                    }
 
-                    case "5": // marcar como concluída
-     if (tarefas.isEmpty()) {
-        System.out.println("Não há tarefas cadastradas.");
-    } else {
-        System.out.print("Número da tarefa a concluir: ");
-        int escolha = ler.nextInt();
-        ler.nextLine();
-        if (escolha >= 1 && escolha <= tarefas.size()) {
-            status.set(escolha - 1, "concluída");
-            System.out.println("Tarefa concluída!");
-        } else {
-            System.out.println("Número inválido.");
-        }
-    }
-        break;
+                    case "5" -> {
+                        // marcar como concluída
+                        if (tarefas.isEmpty()) {
+                            System.out.println("Não há tarefas cadastradas.");
+                        } else {
+                            System.out.print("Número da tarefa a concluir: ");
+                            int escolha = ler.nextInt();
+                            ler.nextLine();
+                            if (escolha >= 1 && escolha <= tarefas.size()) {
+                                status.set(escolha - 1, "concluída");
+                                System.out.println("Tarefa concluída!");
+                            } else {
+                                System.out.println("Número inválido.");
+                            }
+                        }               }
 
-                    default:
-                        System.out.println("Opção inválida, tente novamente.");
+                    default -> System.out.println("Opção inválida, tente novamente.");
                 }
             }
         }

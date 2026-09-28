@@ -45,9 +45,11 @@ public class Teste {
                 System.out.println("1 - Adicionar tarefa");
                 System.out.println("2 - Listar tarefas");
                 System.out.println("3 - Modificar tarefa");
-                System.out.println("4 - Sair");
-                System.out.println("5 - Marcar tarefa como concluída");
+                System.out.println("4 - Marcar tarefa como concluída");
+                System.out.println("5 - remover");
+                System.out.println("6 - Sair");
                 System.out.print("Escolha: ");
+
                 String opcao = ler.nextLine();
 
                 switch (opcao) {
@@ -84,10 +86,6 @@ public class Teste {
                         }
                     }
                     case "4" -> {
-                        continuar = false;
-                        System.out.println("Encerrando o programa.");
-                    }
-                    case "5" -> {
                         if (tarefas.isEmpty()) {
                             System.out.println("Não há tarefas cadastradas.");
                         } else {
@@ -102,6 +100,28 @@ public class Teste {
                             }
                         }
                     }
+                    case "5" -> {
+                        if (tarefas.isEmpty()) {
+                            System.out.println("Não há tarefas cadastradas.");
+                        } else {
+                            System.out.print("Número da tarefa a remover: ");
+                            int escolha = ler.nextInt();
+                            ler.nextLine();
+
+                            if (escolha >= 1 && escolha <= tarefas.size()) {
+                                tarefas.remove(escolha - 1);
+                                status.remove(escolha - 1);
+                                System.out.println("Tarefa removida!");
+                            } else {
+                                System.out.println("Número inválido.");
+                            }
+                        }
+                    }
+                    case "6" -> {
+                        continuar = false;
+                        System.out.println("Encerrando o programa.");
+                    }
+
                     default -> System.out.println("Opção inválida, tente novamente.");
                 }
             }
