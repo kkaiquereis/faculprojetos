@@ -35,7 +35,9 @@ public class Estoque {
                 System.out.println("3 - Modificar quantidade");
                 System.out.println("4 - Modificar valor");
                 System.out.println("5 - remover");
-                System.out.println("6 - Sair");
+                System.out.println("6 - quantidade total no estoque");
+                System.out.println("7 - valor total do estoque");
+                System.out.println("8 - Sair");
                 System.out.print("Escolha: ");
 
                 String opcao = ler.nextLine();
@@ -60,7 +62,7 @@ public class Estoque {
                     }
                     case "2" -> {
                         if (tarefas.isEmpty()) {
-                            System.out.println("Não há tarefas pendentes.");
+                            System.out.println("Não há produtos no estoque.");
                         } else {
                             for (int i = 0; i < tarefas.size(); i++) {
                                 System.out.println("- " + tarefas.get(i) + "("+ quantidadeProdutos.get(i) + ")" + "(" + precoProdutos.get(i) + ")");
@@ -118,7 +120,30 @@ public class Estoque {
                             }
                         }
                     }
-                    case "6" -> {
+                    case "6"-> {                  
+                     System.out.println("Deseja ver a quantidade total no estoque?");
+                     String resposta = ler.nextLine();
+                     if (resposta.equalsIgnoreCase("s")) {
+                       int total = 0;
+                        for (int i = 0; i < quantidadeProdutos.size(); i++) {
+                         total += quantidadeProdutos.get(i);
+                          }
+                           System.out.println("Quantidade total em estoque: " + total);
+                         } else if (resposta.equalsIgnoreCase("n")) {
+                           System.out.println("Ok, não será exibida a quantidade total.");
+                         } else {
+                           System.out.println("Resposta inválida. Digite 's' para sim ou 'n' para não.");
+                        }
+
+                    }
+                    case "7" -> {
+                        double total = 0;
+                        for (int i = 0; i < quantidadeProdutos.size(); i++) {
+                            total += quantidadeProdutos.get(i) * precoProdutos.get(i);
+                        }
+                        System.out.println("Valor total do estoque: R$ " + total);
+                    }
+                    case "8" -> {
                         continuar = false;
                         System.out.println("Encerrando o programa.");
                     }
@@ -128,7 +153,4 @@ public class Estoque {
             }
         }
     }
-
-  
 }
-

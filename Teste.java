@@ -127,7 +127,7 @@ public class Teste {
             }
         }
     }
-
+    
     // Método separado: cuida apenas da autenticação de usuário e senha
     public static void autenticar(Scanner ler) {
         boolean usuarioAutenticado = false;
